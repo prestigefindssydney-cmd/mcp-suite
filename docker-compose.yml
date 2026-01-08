@@ -1,0 +1,90 @@
+# ===========================================
+# MCP Suite - Docker Compose
+# ===========================================
+# Usage: docker compose build
+
+version: '3.8'
+
+services:
+  # --- Node.js MCPs ---
+
+  mcp-gemini:
+    build:
+      context: ./mcps/gemini
+      dockerfile: Dockerfile
+    image: mcp-gemini:latest
+    environment:
+      - GEMINI_API_KEY=${GEMINI_API_KEY}
+    stdin_open: true
+    tty: true
+
+  mcp-lemlist:
+    build:
+      context: ./mcps/lemlist
+      dockerfile: Dockerfile
+    image: mcp-lemlist:latest
+    environment:
+      - LEMLIST_API_KEY=${LEMLIST_API_KEY}
+    stdin_open: true
+    tty: true
+
+  mcp-contabo:
+    build:
+      context: ./mcps/contabo
+      dockerfile: Dockerfile
+    image: mcp-contabo:latest
+    environment:
+      - CONTABO_CLIENT_ID=${CONTABO_CLIENT_ID}
+      - CONTABO_CLIENT_SECRET=${CONTABO_CLIENT_SECRET}
+      - CONTABO_API_USER=${CONTABO_API_USER}
+      - CONTABO_API_PASSWORD=${CONTABO_API_PASSWORD}
+    stdin_open: true
+    tty: true
+
+  mcp-instagram:
+    build:
+      context: ./mcps/instagram
+      dockerfile: Dockerfile
+    image: mcp-instagram:latest
+    environment:
+      - INSTAGRAM_SESSION_ID=${INSTAGRAM_SESSION_ID}
+      - INSTAGRAM_CSRF_TOKEN=${INSTAGRAM_CSRF_TOKEN}
+      - INSTAGRAM_USER_ID=${INSTAGRAM_USER_ID}
+    stdin_open: true
+    tty: true
+
+  mcp-canva:
+    build:
+      context: ./mcps/canva
+      dockerfile: Dockerfile
+    image: mcp-canva:latest
+    environment:
+      - CANVA_CLIENT_ID=${CANVA_CLIENT_ID}
+      - CANVA_CLIENT_SECRET=${CANVA_CLIENT_SECRET}
+    stdin_open: true
+    tty: true
+
+  mcp-vps-ssh:
+    build:
+      context: ./mcps/vps-ssh
+      dockerfile: Dockerfile
+    image: mcp-vps-ssh:latest
+    environment:
+      - VPS_HOST=${VPS_HOST}
+      - VPS_USER=${VPS_USER}
+      - VPS_PORT=${VPS_PORT}
+    stdin_open: true
+    tty: true
+
+  # --- Python MCPs ---
+
+  mcp-vertex-rag:
+    build:
+      context: ./mcps/vertex-rag
+      dockerfile: Dockerfile
+    image: mcp-vertex-rag:latest
+    environment:
+      - GOOGLE_PROJECT_ID=${GOOGLE_PROJECT_ID}
+      - GOOGLE_LOCATION=${GOOGLE_LOCATION}
+    stdin_open: true
+    tty: true

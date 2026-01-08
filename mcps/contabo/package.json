@@ -1,0 +1,14 @@
+{
+  "name": "mcp-contabo",
+  "version": "1.0.0",
+  "description": "MCP Server pour l'API Contabo - Gestion VPS/VDS",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0",
+    "dotenv": "^16.3.1"
+  }
+}

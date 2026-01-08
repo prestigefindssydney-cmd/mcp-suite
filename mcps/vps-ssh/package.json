@@ -1,0 +1,15 @@
+{
+  "name": "mcp-vps-ssh",
+  "version": "1.0.0",
+  "description": "MCP Server pour controler le VPS via SSH",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0",
+    "dotenv": "^16.3.1",
+    "ssh2": "^1.15.0"
+  }
+}
