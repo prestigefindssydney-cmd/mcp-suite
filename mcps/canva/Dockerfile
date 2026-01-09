@@ -34,7 +34,7 @@ WORKDIR /app
 COPY package*.json ./
 
 # Installer les dependances
-RUN npm ci
+RUN npm install
 
 # Copier le code source
 COPY index.js ./
